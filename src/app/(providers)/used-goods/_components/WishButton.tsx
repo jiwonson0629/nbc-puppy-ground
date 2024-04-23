@@ -1,7 +1,7 @@
 'use client';
 
 import { addUsedGoodWish, removeUsedGoodWish } from '@/apis/wishLike/actions';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import { supabase } from '@/shared/supabase/supabase';
 import { getCountFromTable } from '@/utils/table';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';

@@ -1,7 +1,7 @@
 'use client';
 import Card from './Card';
 import styles from './list.module.scss';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import { getMungStagramLike, getUsedGoodWish } from '@/apis/wishLike/actions';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';

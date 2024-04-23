@@ -2,7 +2,7 @@
 
 import { createComment } from '@/apis/mung-stagram/action';
 import { getProfile } from '@/apis/profile/profile';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import { useToast } from '@/hooks/useToast';
 import { TablesInsert } from '@/shared/supabase/types/supabase';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';

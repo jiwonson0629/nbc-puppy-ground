@@ -12,7 +12,7 @@ import ImageSlider from '@/app/_components/lib/ImageSlider';
 import CommentForm from '@/app/(providers)/@modal/_components/CommentForm';
 import { CommentList, LikeButton } from '@/app/(providers)/@modal/_components';
 import KakaoShareButton from '@/app/_components/shareButton/KakaoShareButton';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import MungstaModal from './MungstaModal';
 import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation';

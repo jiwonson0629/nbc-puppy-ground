@@ -5,7 +5,7 @@ import { deleteUsedGood, updateUsedGood } from '@/apis/used-goods/actions';
 import ChatList from '@/app/_components/chatting/ChatList';
 import ClipBoardButton from '@/app/_components/shareButton/ClipBoardButton';
 import KakaoShareButton from '@/app/_components/shareButton/KakaoShareButton';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import { useToast } from '@/hooks/useToast';
 import { supabase } from '@/shared/supabase/supabase';
 import { addCommasToNumber } from '@/utils/format';

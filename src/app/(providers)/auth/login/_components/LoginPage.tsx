@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import styles from './page.module.scss';
 import { useToast } from '@/hooks/useToast';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import Link from 'next/link';
 import type { Database } from '@/shared/supabase/types/supabase';
 

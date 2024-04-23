@@ -7,7 +7,7 @@ import { FiPlus } from 'react-icons/fi';
 import { useToast } from '@/hooks/useToast';
 import { v4 as uuidv4 } from 'uuid';
 import { supabase } from '@/shared/supabase/supabase';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import Swal from 'sweetalert2';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useForm, SubmitHandler } from 'react-hook-form';

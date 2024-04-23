@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './alertMessageList.module.scss';
 import { useAlertMessage } from '@/hooks/useAlertMessage';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import AlertMessageRow from './AlertMessageRow';
 
 type Props = {

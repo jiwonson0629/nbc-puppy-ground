@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 import styles from './create.module.scss';
 import { useToast } from '@/hooks/useToast';
 import Swal from 'sweetalert2';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import KakaoMapMarker from '@/app/_components/kakaoMap/KakaoMapMarker';
 import { useAddress, usePosition } from '@/hooks/useKakaoMapMarker';
 import { MdOutlineCancel } from 'react-icons/md';

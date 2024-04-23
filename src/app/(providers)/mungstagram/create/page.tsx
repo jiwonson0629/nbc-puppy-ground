@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { supabase } from '@/shared/supabase/supabase';
 import Image from 'next/image';
 import { TablesInsert } from '@/shared/supabase/types/supabase';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import Swal from 'sweetalert2';
 import { useQueryClient } from '@tanstack/react-query';
 

@@ -3,7 +3,7 @@
 import { getPosts } from '@/apis/mung-stagram/action';
 import { addMungStagramLike, removeMungStagramLike } from '@/apis/wishLike/actions';
 import { useAlertMessage } from '@/hooks/useAlertMessage';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import { useToast } from '@/hooks/useToast';
 import { supabase } from '@/shared/supabase/supabase';
 import { getCountFromTable } from '@/utils/table';
