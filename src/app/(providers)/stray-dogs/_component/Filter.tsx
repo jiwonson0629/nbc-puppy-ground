@@ -16,6 +16,10 @@ function Filter() {
   const [startDate, setStartDate] = useState(new Date('2023-10-01'));
   const [endDate, setEndDate] = useState(new Date());
   const setStrayList = useStrayDogStore((state) => state.setStrayList);
+  const setLimit = useStrayDogStore((state) => state.setLimit);
+  const setOffset = useStrayDogStore((state) => state.setOffset);
+  const setPagination = useStrayDogStore((state) => state.setPagination);
+
   const {
     isLoading,
     isError,
@@ -36,13 +40,16 @@ function Filter() {
     endDate
   };
 
+  const { limit, offset, page, setPage, filterList, setFilteredStrayList, filteredStrayList } =
+    useFilterStrayList(filterNeedData);
   useEffect(() => {
     if (strayList) {
       setFilteredStrayList(strayList);
+      setLimit(limit);
+      setOffset(offset);
+      setPagination(page);
     }
   }, [strayList]);
-  const { limit, offset, page, setPage, filterList, setFilteredStrayList, filteredStrayList } =
-    useFilterStrayList(filterNeedData);
 
   useEffect(() => {
     setStrayList(filteredStrayList);
@@ -51,10 +58,15 @@ function Filter() {
   const selectRegion = regionList.find((region) => region.city === selectCity);
   const guList = selectRegion ? selectRegion.gu : [];
 
+  // 필터링
   const handFilter = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const filteredStrayList = filterList();
     setFilteredStrayList(filteredStrayList);
+    setPage(1);
+    setLimit(limit);
+    setOffset(offset);
+    setPagination(page);
   };
   console.log('필터됨?', filteredStrayList);
 

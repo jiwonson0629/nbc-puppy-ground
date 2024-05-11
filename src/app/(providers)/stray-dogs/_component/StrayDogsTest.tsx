@@ -7,15 +7,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Filter from './Filter';
 import useStrayDogStore from '@/shared/zustand/strayDogStore';
+import Pagination from '@/app/_components/pagination/Pagination';
 
 function StrayDogsTest() {
   const strayList = useStrayDogStore((state) => state.strayList);
-
+  const limit = useStrayDogStore((state) => state.limit);
+  const offset = useStrayDogStore((state) => state.offset);
+  const page = useStrayDogStore((state) => state.page);
+  // const setPage = useStrayDogStore((state)=>state.setPagination)
   return (
     <>
-      {/* <Filter /> */}
       <div className={styles.gridContainer}>
-        {strayList?.map((list, index) => {
+        {strayList?.slice(offset!, offset! + limit!).map((list, index) => {
           const formatHappenDt = dayjs(list.happenDt).format('YYYY[년] MM[월] DD[일]');
           return (
             <div key={index}>
@@ -49,6 +52,7 @@ function StrayDogsTest() {
             </div>
           );
         })}
+        <Pagination page={page} limit={limit} total={strayList?.length} />
       </div>
     </>
   );

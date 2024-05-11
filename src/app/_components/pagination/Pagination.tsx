@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import style from './pagination.module.scss';
+import useStrayDogStore from '@/shared/zustand/strayDogStore';
 export type Props = {
   page: number;
   setPage: Dispatch<SetStateAction<number>>;
@@ -7,7 +8,8 @@ export type Props = {
   limit: number;
 };
 
-function Pagination({ page, setPage, total, limit }: Props) {
+function Pagination({ page, total, limit }: Props) {
+  const setPage = useStrayDogStore((state) => state.setPagination);
   const numPages = Math.ceil(total! / limit);
   const pagesToShow = 5;
 
