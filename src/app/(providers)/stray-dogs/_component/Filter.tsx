@@ -16,9 +16,6 @@ function Filter() {
   const [startDate, setStartDate] = useState(new Date('2023-10-01'));
   const [endDate, setEndDate] = useState(new Date());
   const setStrayList = useStrayDogStore((state) => state.setStrayList);
-  const setLimit = useStrayDogStore((state) => state.setLimit);
-  const setOffset = useStrayDogStore((state) => state.setOffset);
-  const setPagination = useStrayDogStore((state) => state.setPagination);
 
   const {
     isLoading,
@@ -40,14 +37,11 @@ function Filter() {
     endDate
   };
 
-  const { limit, offset, page, setPage, filterList, setFilteredStrayList, filteredStrayList } =
+  const { filterList, setFilteredStrayList, filteredStrayList } =
     useFilterStrayList(filterNeedData);
   useEffect(() => {
     if (strayList) {
       setFilteredStrayList(strayList);
-      setLimit(limit);
-      setOffset(offset);
-      setPagination(page);
     }
   }, [strayList]);
 
@@ -63,12 +57,7 @@ function Filter() {
     e.preventDefault();
     const filteredStrayList = filterList();
     setFilteredStrayList(filteredStrayList);
-    setPage(1);
-    setLimit(limit);
-    setOffset(offset);
-    setPagination(page);
   };
-  console.log('필터됨?', filteredStrayList);
 
   if (isLoading) {
     return <Loading />;
