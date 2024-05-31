@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 import { LuPencilLine } from 'react-icons/lu';
 import { FiPlus } from 'react-icons/fi';
 import KakaoMapMarker from '@/app/_components/kakaoMap/KakaoMapMarker';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import { useAddress, usePosition } from '@/hooks/useKakaoMapMarker';
 
 const bucketName = 'used_goods';

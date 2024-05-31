@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import styles from './profile.module.scss';
 import { useToast } from '@/hooks/useToast';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import { CiCamera } from 'react-icons/ci';
 import { useProfile } from '@/hooks/useProfile';
 import { useUploadImage } from '@/hooks/useUploadImage';

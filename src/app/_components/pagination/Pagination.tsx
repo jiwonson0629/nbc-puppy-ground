@@ -1,51 +1,44 @@
-import React, { Dispatch, SetStateAction } from 'react';
-import style from './pagination.module.scss';
-export type Props = {
-  page: number;
-  setPage: Dispatch<SetStateAction<number>>;
-  total: number | undefined;
-  limit: number;
+import React from 'react';
+import styles from './pagination.module.scss';
+
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+  goToNextPage: () => void;
+  goToPreviousPage: () => void;
+  goToPage: (pageNumber: number) => void;
+  getPageNumbers: () => number[];
 };
 
-function Pagination({ page, setPage, total, limit }: Props) {
-  const numPages = Math.ceil(total! / limit);
-  const pagesToShow = 5;
-
-  const startPage = Math.max(1, page - Math.floor(pagesToShow / 2));
-  const endPage = Math.min(numPages, startPage + pagesToShow - 1);
-
-  const renderPageButtons = Array.from(
-    { length: endPage - startPage + 1 },
-    (_, index) => startPage + index
-  );
+const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  goToNextPage,
+  goToPreviousPage,
+  goToPage,
+  getPageNumbers
+}) => {
+  const pageNumbers = getPageNumbers();
 
   return (
-    <nav className={style.buttonWrapper}>
-      <button
-        className={style.button}
-        onClick={() => setPage(Math.max(1, page - pagesToShow))}
-        disabled={page <= 1}
-      >
-        &lt;
+    <nav className={styles.buttonWrapper}>
+      <button onClick={goToPreviousPage} disabled={currentPage <= 1} className={styles.button}>
+        {'<'}
       </button>
-      {renderPageButtons.map((pageNumber) => (
+      {pageNumbers.map((pageNumber) => (
         <button
           key={pageNumber}
-          onClick={() => setPage(pageNumber)}
-          className={page === pageNumber ? style.selectedPage : style.button}
+          onClick={() => goToPage(pageNumber)}
+          className={currentPage === pageNumber ? styles.selectedPage : styles.button}
         >
           {pageNumber}
         </button>
       ))}
-      <button
-        className={style.button}
-        onClick={() => setPage(Math.min(numPages, page + pagesToShow))}
-        disabled={page >= numPages}
-      >
-        &gt;
+      <button onClick={goToNextPage} disabled={currentPage >= totalPages} className={styles.button}>
+        {'>'}
       </button>
     </nav>
   );
-}
+};
 
 export default Pagination;

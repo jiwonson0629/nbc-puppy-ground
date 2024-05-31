@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './page.module.scss';
 import { useToast } from '@/hooks/useToast';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import defaultAvatar from '@/../public/images/my_page_default.svg';
 import Link from 'next/link';
 import Image from 'next/image';

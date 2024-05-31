@@ -6,7 +6,7 @@ import { supabase } from '@/shared/supabase/supabase';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect, MouseEventHandler } from 'react';
 import { useToast } from '@/hooks/useToast';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import Loading from './loading/Loading';
 import { GoBell } from 'react-icons/go';

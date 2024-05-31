@@ -8,7 +8,7 @@ import { getStringFromNow } from '@/utils/time';
 import { ChangeEvent, Fragment, useState } from 'react';
 import { useToast } from '@/hooks/useToast';
 import { Tables } from '@/shared/supabase/types/supabase';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 
 const CommentList = () => {
   const params = useParams();

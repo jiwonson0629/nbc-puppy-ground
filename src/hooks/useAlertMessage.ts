@@ -9,7 +9,7 @@ import {
   updateChatAlertMessageStatus
 } from '@/apis/alertMessage';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import useAuth from './useAuth';
+import useAuth from '../shared/zustand/useAuth';
 
 export const ALERT_MESSAGE_QUERY_LEY = 'alert_message';
 

@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import useAuth from './useAuth';
+import useAuth from '../shared/zustand/useAuth';
 import { getProfile, updateUserProfile } from '@/apis/profile/profile';
 
 const PROFILE_QUERY_KEY = 'getProfile';

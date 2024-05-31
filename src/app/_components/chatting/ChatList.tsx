@@ -4,7 +4,7 @@ import ChatModal from './ChatModal';
 import { supabase } from '@/shared/supabase/supabase';
 import { Tables } from '@/shared/supabase/types/supabase';
 import { useEffect, useRef, useState } from 'react';
-import useAuth from '@/hooks/useAuth';
+import useAuth from '@/shared/zustand/useAuth';
 import styles from './chatList.module.scss';
 import Chat from './Chat';
 import ChatInput from './ChatInput';
