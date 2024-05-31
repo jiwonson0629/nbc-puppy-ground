@@ -32,7 +32,6 @@ const useFilterStrayList = ({ strayList, selectCity, selectGu, endDate, startDat
 
     return filteredDate;
   };
-  const cost = filterList();
   return {
     filterList,
     filteredStrayList,
